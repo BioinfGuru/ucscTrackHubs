@@ -1,0 +1,5 @@
+hub CoxLab
+shortLabel CoxLab
+longLabel CoxLab
+genomesFile genomes.txt
+email k.condon@har.mrc.ac.uk
