@@ -1,0 +1,75 @@
+CREATING TRACKS FOR UCSC GENOME BROWSER
+Useful links:	
+
+User Guide					https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp.html
+Configure trackDB.txt		https://genome.ucsc.edu/goldenPath/help/trackDb/trackDbHub.html
+Quick Start					https://genome.ucsc.edu/goldenPath/help/hubQuickStart.html
+Grouping hubs 				https://genome.ucsc.edu/goldenPath/help/hubQuickStartGroups.html
+Choosing a track format		http://genomewiki.ucsc.edu/index.php/Selecting_a_graphing_track_data_format
+bigwig walkthrough			http://genome.ucsc.edu/goldenPath/help/bigWig.html
+Public hubs 				https://genome-euro.ucsc.edu/cgi-bin/hgHubConnect?redirect=manual&source=genome.ucsc.edu
+Displaying your track		http://genome.ucsc.edu/goldenPath/help/customTrack.html
+Debugging					https://genome-euro.ucsc.edu/goldenPath/help/hgTrackHubHelp.html#Debug
+Colour Wheel				http://www.rapidtables.com/web/color/RGB_Color.htm
+
+Note:	hosting hub files on HTTP tends to work even better than FTP
+
+When a hub track is displayed in the Genome Browser, only the relevant data needed to support the view of the current genomic region are transmitted rather than the entire file. The transmitted data are cached on the UCSC server to expedite future access. This on-demand transfer mechanism eliminates the need to transmit large data sets across the Internet, thereby minimizing upload time into the browser. Hub tracks are limited to compressed binary indexed formats that can be remotely hosted. The bigwig (.bw) and bigbed (.bb) data types are a better option than bedgraph (.bdg) and wiggle (.wig).  They are much smaller (avoiding time outs and size limitations on UCSC), and the bigwig encoder is efficient with sparse data sets, or data sets with variable sized data points. Compress (gzip) the submitted data file, to get better network transmission time.
+
+The hubDirectory:
+hub.txt:		Describes your hub and defines the location of genomes.txt - Minimum 4 lines
+genome.txt	Defines location of each assembly and its trackDb.txt – 2 Minimum 2 lines
+mm10		The assembly to be used on USCS
+trackDb.txt	Defines location and sets paramaters of the binary indexed track data
+data		Contains the binary indexed track data
+
+Setup Filezilla:
+- [install] (https://filezilla-project.org/download.php?type=client)
+- file site manager → new site → add host, logon type = normal
+- Top directory should contain robots.txt + the hub directories of each lab
+- Lab1
+	- host (for filezilla) = ftp://ftp.har.mrc.ac.uk/Lab1HubDirectory 
+	- user = Lab1
+	- password = coX1184
+	- URL = ftp://Lab1:coX1184@ftp.har.mrc.ac.uk/CoxLabHubDirectory/hub.txt 
+
+Check hub set up:
+[install](https://bioconda.github.io/recipes/ucsc-hubcheck/README.html)
+$hubCheck [URL]
+
+The errors:
+timed out > 1000000 microsec (wrong password)
+couldn’t find host (wrong server name)
+could not get file size (wrong file name or trackdb not found)
+missing bigDataUrl setting from track of type=bigBed (multiline track file)
+missing required setting 'hub' from ftp (open hub.txt → the “hub” is not set correctly)
+missing required 'bigDataUrl' setting in hub (URLs are missing from a composite track)
+
+Connect hub:	Select [Europe](https://genome-euro.ucsc.edu/cgi-bin/hgHubConnect) or [US](https://genome.ucsc.edu/cgi-bin/hgHubConnect) mirror, then Enter URL
+
+Updating tracks:
+UCSC checks the time stamps every 300 seconds, which can result in a 5-minute delay between the time a hub file is updated and the change appears on the Genome Browser. Hub providers can work around this delay by inserting the CGI variable udcTimeout=1 into the Genome Browser URL, which will reduce the delay to one second. To add this variable, open the Genome Browser tracks page and zoom or scroll the image to display a full browser URL in which the CGI variables visible. Insert the CGI variable just after the "hgTracks" portion of the URL so that it reads http://genome.ucsc.edu/cgi-bin/hgTracks?udcTimeout=1& (with the remainder of the URL following the ampersand). To restore the default timeout, a warning message will appear on hgTracks with a link to clear the udcTimeout variable.
+
+[Composites + super-tracks + multiwigs](https://genome.ucsc.edu/goldenPath/help/trackDb/trackDbHub.html#groupingTracks)
+For each composite, it is recommended that a subset of subtracks are "selected" (on) by default. This way, when a user turns the composite from hide to another visibility, they will see tracks displayed in the browser. For super-tracks that you don't want displaying by default when your track hub is turned on, it is recommended that some (or all) composites within the super-track be set to dense (or some visibility other than hide) by default and that the super-track be set to hide by default. This way, if a user changes a super-track from hide to show from the controls under the browser image, tracks are displayed. To implement, change the visibility line in trackDb of the super-tracks to hide and the visibility lines of all or some of the composite tracks within to dense (or some visibility other than hide).
+
+[Overlaying multiple tracks](http://biofeed.tumblr.com/post/45676161703/overlay-multiple-tracks-in-ucsc-browser)
+
+Preparing MACS2 output
+1. grid_macs2bdg_master.pl		takes MACS2 output + bam/bed files to create .bdg files
+2. bdg2bw.pl			takes .bdg files and creates bigwig files
+3. maketracks.pl			edits/creates track.db file
+4. $hubCheck [URL]			check for errors
+
+Bed to BigBed:
+In trackDb.txt, when type is bigBed, it may be followed by an optional number denoting the number of fields in the bigBed file (e.g., "type bigBed 9" for a file with 9 fields). If no number is given, a default value of 3 is assumed (chr, start, end). For colours to be shown you must have 9 columns, and you must declare “type bigBed 9”.
+[create a bed format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+[bigbed track format](http://genome.ucsc.edu/goldenPath/help/bigBed.html)
+[bigbed track settings](https://genome.ucsc.edu/goldenPath/help/trackDb/trackDbHub.html#bigBed_-_Item_or_Region_Track_Settings)
+[Upscaling a range of values containing negative numbers](http://stackoverflow.com/questions/13137348/scaling-range-of-values-with-negative-numbers)
+
+Scripts: 
+	remap.pl			- convert mm9 to mm10
+	diffToBigBed.pl		- convert diffbind reports
+	nucleoatacToBigBed.pl	- convert nucleoatac output 
+	bedToBigBed.pl		- convert any bed file
