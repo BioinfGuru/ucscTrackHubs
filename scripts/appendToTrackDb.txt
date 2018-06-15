@@ -1,0 +1,117 @@
+	track ENCFF124CBV_h3k27ac_es-b4
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF124CBV_h3k27ac_es-b4.bigWig
+	shortLabel ENCFF124CBV_h3k27ac_es-b4
+	longLabel ENCFF124CBV_h3k27ac_es-b4
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF073HRX_h3k4me1_testis_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF073HRX_h3k4me1_testis_8w.bigWig
+	shortLabel ENCFF073HRX_h3k4me1_testis_8w
+	longLabel ENCFF073HRX_h3k4me1_testis_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF572JFH_h3k27ac_testis_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF572JFH_h3k27ac_testis_8w.bigWig
+	shortLabel ENCFF572JFH_h3k27ac_testis_8w
+	longLabel ENCFF572JFH_h3k27ac_testis_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF188DKO_h3k27ac_kidney_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF188DKO_h3k27ac_kidney_8w.bigWig
+	shortLabel ENCFF188DKO_h3k27ac_kidney_8w
+	longLabel ENCFF188DKO_h3k27ac_kidney_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF623CRW_h3k4me1_limb_15.5d
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF623CRW_h3k4me1_limb_15.5d.bigWig
+	shortLabel ENCFF623CRW_h3k4me1_limb_15.5d
+	longLabel ENCFF623CRW_h3k4me1_limb_15.5d
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF163HEV_h3k27ac_es_e14
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF163HEV_h3k27ac_es_e14.bigWig
+	shortLabel ENCFF163HEV_h3k27ac_es_e14
+	longLabel ENCFF163HEV_h3k27ac_es_e14
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF899GLT__h3k4me1_es_e14
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF899GLT__h3k4me1_es_e14.bigWig
+	shortLabel ENCFF899GLT__h3k4me1_es_e14
+	longLabel ENCFF899GLT__h3k4me1_es_e14
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF199SCG_h3k27ac_limb_15.5d
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF199SCG_h3k27ac_limb_15.5d.bigWig
+	shortLabel ENCFF199SCG_h3k27ac_limb_15.5d
+	longLabel ENCFF199SCG_h3k27ac_limb_15.5d
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF339GSH_ctcf_es_b4
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF339GSH_ctcf_es_b4.bigWig
+	shortLabel ENCFF339GSH_ctcf_es_b4
+	longLabel ENCFF339GSH_ctcf_es_b4
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF946MNK_ctcf_testis_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF946MNK_ctcf_testis_8w.bigWig
+	shortLabel ENCFF946MNK_ctcf_testis_8w
+	longLabel ENCFF946MNK_ctcf_testis_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF164ZFD_ctcf_kidney_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF164ZFD_ctcf_kidney_8w.bigWig
+	shortLabel ENCFF164ZFD_ctcf_kidney_8w
+	longLabel ENCFF164ZFD_ctcf_kidney_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF192PPW_h3k4me1_kidney_8w
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF192PPW_h3k4me1_kidney_8w.bigWig
+	shortLabel ENCFF192PPW_h3k4me1_kidney_8w
+	longLabel ENCFF192PPW_h3k4me1_kidney_8w
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
+	track ENCFF295HDA_h3k4me1_es_b4
+	parent ENCODE_composite on
+	bigDataUrl ftp://Greenfieldlab:fGGa6Opsty@ftp.har.mrc.ac.uk/GreenfieldLabhubDirectory/mm10/data/encode/ENCFF295HDA_h3k4me1_es_b4.bigWig
+	shortLabel ENCFF295HDA_h3k4me1_es_b4
+	longLabel ENCFF295HDA_h3k4me1_es_b4
+	color 0,0,102
+	type bigWig
+	windowingFunction mean
+
