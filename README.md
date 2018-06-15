@@ -1,2 +1,1 @@
-# ucscTrackHubs
-Create a UCSC track hub for your data
+This is a work in progress
